@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- O CSS é pelo TailWindCss. https://tailwindcss.com/docs/customizing-colors -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola semeador</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./index.js"></script>
+    <link rel="shortcut icon" type="imagex/png" href="./img/foto-logo-semeador.ico">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                colors: {
+                primary: '#002653',
+                secondary: '#ff5c00',
+                tertiary: 'blue'
+                }
+            }
+            }
+        }
+    </script>
+    <style>
+        @font-face{
+        font-family: "ZabalDEMO-light";
+        src: 'ZabalDEMO-Light.otf';}
+
+        @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+         
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Signika+Negative:wght@500&display=swap');
+        
+    </style>
+        
+    <style>
+        .shadow-custom{
+            box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.6), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important
+        }
+
+        .font-family-poppins {
+            font-family: 'Poppins';
+        }
+
+        
+        .font-family-young-xerify {
+            font-family: 'Young Serif', serif;}
+
+
+        .menuHover{
+            position: relative;
+        }
+        .menuHover a::before,
+        .menuHover a::after {
+            content: '';
+            height: 14px;
+            width: 14px;
+            position: absolute;
+            transition: all .35s ease;
+            opacity: 0;
+        }
+        .menuHover a::before {
+            content: '';
+            right: 0;
+            top: 0;
+            border-top: 3px solid #002653;
+            border-right: 3px solid #002653;
+            transform: translate(-100%, 50%);
+        }
+        .menuHover a:after {
+            content: '';
+            left: 0;
+            bottom: 0;
+            border-bottom: 3px solid #002653;
+            border-left: 3px solid #002653;
+            transform: translate(100%, -50%)
+        }
+        .menuHover a:hover:before,
+        .menuHover a:hover:after{
+            transform: translate(0,0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flex flex-col gap-2">
+            <div class="w-full bg-primary py-2 relative flex items-center px-12 gap-4 md:flex-row flex-col">
+                <h1 class="text-white text-center text-3xl flex-1 font-bold">
+                    Escola Metodista O Semeador
+                </h1>
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 sm:hidden block">
+                    <span class="material-symbols-outlined text-secondary cursor-pointer" onclick="openMenu()">
+                        menu
+                    </span>
+                </div>
+            </div>
+            <div class="sm:hidden block w-screen h-screen fixed bg-black/30 flex justify-center items-center" id="menu"  style="display: none;">
+                <div class="p-4 bg-zinc-100 rounded flex flex-col">
+                    <div class="flex">
+                <div class="flex-1"></div>
+                        <div class="w-6 h-6 hover:bg-black/30 flex justify-center items-center cursor-pointer rounded-full" onclick="closeMenu()">   
+                        </div>
+                    </div>
+                    <div class="w-80">
+                        <ul class="flex gap-1 justify-center sm:flex-row flex-col">
+                            <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                                <a href="#linkHome">HOME</a>
+                            </li>
+                            <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                                <a href="#linkSobreEscola">SOBRE A ESCOLA</a>
+                            </li>
+                            <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                                <a href="#linkVisite">VISITE</a>
+                            </li>
+                            <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                                <a href="#linkDoe">DOE</a>
+                            </li>
+                            <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                                <a href="#linkEducacao">EDUCAÇÃO</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="menu relative hidden sm:block">
+                <div class="sm:hidden absolute top-2 right-2 hover:bg-zinc-100 p-2 rounded-full w-6 h-6 flex justify-center items-center cursor-pointer">
+                    <span>X</span>
+                </div>
+                <div class="flex justify-between items-center gap-20 px-10">
+                    <img src="./img/foto logo semeador.png" alt="logosemador" class="w-20 h-20">
+                    <ul class="flex gap-1 justify-center sm:flex-row flex-col">
+                        <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                            <a href="#linkHome">HOME</a>
+                        </li>
+                        <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                            <a href="#linkSobreEscola">SOBRE A ESCOLA</a>
+                        </li>
+                        <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                            <a href="#linkVisite">VISITE</a>
+                        </li>
+                        <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                            <a href="#linkDoe">DOE</a>
+                        </li>
+                        <li class="w-fit text-secondary font-bold sm:p-4 p-2 text-lg menuHover">
+                            <a href="#linkEducacao">EDUCAÇÃO</a>
+                        </li>
+                    </ul>
+                    <div class="w-20"></div>
+                </div>
+            </div>
+            <div class="bg-secondary w-full h-4 hidden sm:block"></div>
+        </div>
+    </header>
+    <main
+        class="w-full max-w-[1200px]"
+        style=" margin: 0 auto"
+    >
+        <section id="linkHome"  class="flex flex-col gap-4 p-4">
+            <div class="flex gap-12 fit-content sm:flex-row items-center flex-col" style="margin: auto;">
+                <div class="flex flex-col w-full md:w-[350px]">
+                    <h2 class="text-4xl text-secondary  font-bold ">SEJA UM SEMEADOR VOLUNTÁRIO!</h2>
+                    <div class="text-primary mt-10 ">
+                        O serviço voluntário é um importantíssimo instrumento para a construção de uma cultura de paz.
+                        Doar seu tempo, seu sorriso, seu amor, seu carinho, sua disposição, seu trabalho e seus recursos para alegrar o outro, para fazer feliz, para ser útil, não tem preço.
+                        Você pode ser um Semeador Voluntário ou um Semeador Doador. Veja como clicando no botão abaixo:
+                    </div>
+                    <div class="flex ">
+                        <div class="flex-1"></div>
+                        
+                        <a class="shadow-custom bg-primary w-64 h-16 rounded-full mt-10 flex justify-center items-center "
+                            href="#linkDoe"
+                        >
+                            <span class="text-secondary text-2xl ">Doe agora!</span>  
+                        </a>         
+                        <div class="flex-1">
+                        </div>               
+                    </div>
+
+                </div>
+                <img src="./img/imagemDoaçao.png" alt="imagemsobreDoaçao" class="w-[350px]"  >
+            </div>
+        </section>
+        <section class="flex flex-col gap-4 p-4 items-center ">
+
+            <h2 class="text-4xl text-secondary font-extrabold text-center">NOSSA HISTÓRIA</h2>
+            <div class="p-4 text-primary  text-justify w-4/6 " >
+                Era uma vez, uma senhora que tinha quatro filhos. Dois desses filhos tinham deficiência intelectual. Desde pequenos ela sempre encontrava dificuldade em mantê-los nas escolas regulares e, conforme cresciam, a situação ficava ainda mais dificultosa. Essa mãe era membro da Igreja Metodista em São Caetano. Mulher de fé, trabalhadora, mãe dedicada e querida por todos. Suas irmãs e irmãos de fé decidiram apoia-la e envidar todos os esforços para contribuir para melhor qualidade de vida e bem estar dos seus filhos e de todas as pessoas com deficiência que pudessem alcançar. A AMAS - Associação Metodista de Ação Social, instituição beneficente, sem fins lucrativos, fundada em 1974 pela Igreja Metodista em São Caetano do Sul decidiu abraçar e ser a mantenedora desse projeto. Assim nasceu “O Semeador”.
+            </div>
+        </section>
+        <section id="linkSobreEscola" class="flex flex-col gap-4 p-4">
+            <div>
+                <h2 class="text-4xl text-center font-bold text-secondary">SOBRE A ESCOLA</h2>
+            </div>
+            <div class="md:px-40 px-8">
+                <div class=" w-full aspect-video relative flex justify-center">
+                    <img src="./img/fotoGrupo.jpg" alt="" id="imagem">
+                    <div id="controles" class="absolute left-0 top-0 w-full h-full">
+                        <div class="absolute bottom-4 left-0 w-full flex justify-center">
+                            <div class=" flex gap-2 w-fit items-center">
+                                <div class="cursor-pointer" onclick="previusId()">
+                                    <span class="material-symbols-outlined text-secondary">
+                                        arrow_back
+                                    </span>
+                                </div>
+                                <div class="w-8 h-2 mb-1 bg-secondary rounded-full hover:bg-zinc-300 cursor-pointer transition-all duration-300" id="img1" onclick="changeImg(1)"></div>
+                                <div class="w-8 h-2 mb-1 bg-zinc-100 rounded-full hover:bg-zinc-300 cursor-pointer transition-all duration-300 " id="img2" onclick="changeImg(2)"></div>
+                                <div class="w-8 h-2 mb-1 bg-zinc-100 rounded-full hover:bg-zinc-300 cursor-pointer transition-all duration-300 " id="img3" onclick="changeImg(3)"></div>
+                                <div class="w-8 h-2 mb-1 bg-zinc-100 rounded-full hover:bg-zinc-300 cursor-pointer transition-all duration-300 " id="img4" onclick="changeImg(4)"></div>
+                                <div class="w-8 h-2 mb-1 bg-zinc-100 rounded-full hover:bg-zinc-300 cursor-pointer transition-all duration-300 " id="img5" onclick="changeImg(5)"></div>
+                                <div class="cursor-pointer" onclick="nextId()">
+                                    <span class="material-symbols-outlined text-secondary">
+                                        arrow_forward
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-primary  mt-10 text-justify ">A escola em São Caetano do Sul ocupa uma área de 2.066m2, proporcionando um ambiente amplo e diversificado para o desenvolvimento educacional.
+					Especializada no atendimento a pessoas com deficiência intelectual, múltiplas deficiências e transtorno do espectro autista, a instituição abrange o Ensino Fundamental 
+				 	do 1º ao 5º ano na modalidade AEE, atendendo alunos com idades entre 6 e 30 anos. Adicionalmente, oferece um Projeto de Convivência e Fortalecimento de Vínculos para o 
+				 	mesmo público, a partir dos 30 anos.
+					A abordagem educacional é fundamentada em princípios humanistas e relacionais, alinhando-se às normas educacionais, incluindo a Lei de Diretrizes e Bases da Educação Nacional 
+					e a Lei 12.764 de 27/12/2012. O currículo e a metodologia adotados têm como objetivo proporcionar aos alunos não apenas o conhecimento teórico, mas também a capacidade de 
+					aplicar esse conhecimento na prática. A ênfase no aprendizado ativo e reflexivo visa aprimorar as <a id="linkVisite">habilidades dos alunos, estimulando a reelaboração de conhecimentos
+					ampliação da compreensão sobre o mundo e sua própria realidade. Essa abordagem visa não apenas o desenvolvimento intelectual, mas também os aspectos afetivos, emocionais e 
+					espirituais dos educandos</div>
+            </div>
+        </section>
+        <section id="linkVisite" class="flex flex-col gap-4 p-4">
+            <div class="md:px-40 px-8">
+                <h2 class="text-4xl text-primary font-bold">VENHA NOS VISITAR!</h2>
+                <small class=" text-secondary">
+                    R. dos Meninos, 555 - Nova Gerti, São Caetano do Sul - SP, 09580-30
+                </small>
+                <iframe 
+                    class="w-full aspect-square  "
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.881125220775!2d-46.57121392466734!3d-23.644427878742846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4333fd7caa7f%3A0xddaab097e5cf6dae!2sO%20Semeador%20Escola%20Metodista%20-%20AMAS!5e0!3m2!1sen!2sbr!4v1699636085183!5m2!1sen!2sbr" 
+			        allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </section>
+        <section  id="linkDoe"class="flex flex-col gap-4 p-4">
+            <div>
+                <h2 class="text-4xl text-secondary font-bold">VEJA COMO CONTRIBUIR!</h2>
+            </div>
+            <div class="flex md:flex-row flex-col gap-2">
+                <div class="flex flex-col gap-2 flex-1 bg-primary p-4 text-white shadow-custom">
+                    <b class="text-secondary">1º</b>
+                    <span>Se cadastrando no site da Nota Fiscal Paulista <a href="www.porta.fazenda.sp.gov.br">www.porta.fazenda.sp.gov.br</a></span>
+                    <span>Na aba superior clique em:</span>
+                    <ol>
+                        <li>ENTIDADES</li>
+                        <li>DOAÇÃO DE CUPONS COM CPF (AUTOMÁTICA)</li>
+                        <li>PESQUISAR</li>
+                        <li class="uppercase">Digite o CNPJ da AMAS 48.569.263/0001-42</li>
+                        <li>PESQUISAR</li>
+                        <li>CONCLUIR</li>
+                    </ol>
+                    <span></span>
+                </div>
+                <div class="flex flex-col gap-2 justify-between ">
+                    <div class="flex flex-col bg-primary p-4 text-white shadow-custom">
+                        <b class="text-secondary">2º</b>
+                        <span>Doando cupons fiscais sem CPF Para ter validade é preciso ser cupom fiscal, ou seja, com código de barras e QRcode.</span>
+                    </div>
+                    <div class="flex flex-col bg-primary p-4 text-white shadow-custom ">
+                        <b class="text-secondary">3º</b>
+                        <span>Doando seu tempo na organização desses cupons. Esse trabalho pode ser feito na escola ou na sua própria residência.</span>
+                    </div>
+                    <div class="flex flex-col bg-primary p-4 text-white shadow-custom">
+                        <b class="text-secondary">4º</b>
+                        <span>Doando material escolar, lenços umedecidos, luvas descartáveis, alimentos que sirvam como “mistura” nas refeições.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex sm:flex-row flex-col gap-2">
+                <div class="flex flex-col bg-primary p-4 text-white flex-1">
+                    <b class="text-secondary">5º</b>
+                    <span>Doando valor monetário na conta da AMAS 50 anos ESCOLA METODISTA DE EDUCAÇÃO ESPECIAL</span>
+                    <div class="text-center">
+                        <span>
+                            Associação Metodista de Ação Social
+                        </span>
+                        <span>
+                            CNPJ 48.569.263-42
+                        </span>
+                        <span>
+                            Banco do Brasil
+                        </span>
+                        <span>
+                            Agência 2898-3
+                        </span>
+                        <span>
+                            Conta Corrente 260-7
+                        </span>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-primary p-4 text-white w-full sm:w-48">
+                    <b class="text-secondary">6º</b>
+                    <span class="text-center">Seja um doador</span>
+                    <span class="text-center">Seja um voluntário</span>
+                    
+                    <span class="text-center mt-4">Doe qualquer quantia para nós no PIX</span>
+                    <div class="flex justify-center">
+						<img
+                            class="w-full aspect-square"
+                            src="https://miro.medium.com/v2/resize:fit:640/0*zPG9dqz508rmRR70."
+                            alt=""
+                            style="max-width: 160px;"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="linkEducacao" class="flex flex-col gap-4 p-4">
+            <div>
+                <h2 class="text-4xl text-secondary font-bold">EDUCAÇÃO</h2>
+
+                <div class="flex justify-between sm:flex-row flex-col gap-4 mt-4">
+                    <div class="flex flex-col gap-2 bg-zinc-100 p-4 rounded-lg shadow-custom">
+                        <h3 class="text-center text-primary text-3xl font-bold">ENSINO FUNDAMENTAL</h3>
+                        <div class="p-4 ">
+                            O atendimento aos anos iniciais do Ensino Fundamental destina-se a indivíduos de 6 a 30 anos com deficiência intelectual, múltiplas deficiências e/ou transtorno do espectro autista. Os objetivos dessa modalidade seguem as diretrizes da Lei Federal nº 9394/96 para o Ensino Fundamental no Brasil, buscando formar os alunos para seu pleno desenvolvimento e integração na vida escolar e social. O projeto pedagógico prioriza o aluno como centro do processo educativo, enfatizando a reflexão, criatividade, análise crítica, leitura, debates e atividades extracurriculares baseadas no contexto do aluno. A promoção do conhecimento e crescimento integral incentiva a autonomia, responsabilidade, diálogo, trabalho em equipe e solidariedade.
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-zinc-100 p-4 rounded-lg shadow-custom">
+                        <h3 class="text-center text-primary text-3xl font-bold">PROJETO SEMEAR</h3>
+                        <div class="p-4 drop-shadow-md">
+                            O projeto SEMEAR tem como meta proporcionar atendimento de alta qualidade a pessoas com múltiplas deficiências ou Transtorno do Espectro Autista (TEA) acima de 30 anos. O foco é oferecer recursos que promovam a convivência, fortalecimento de vínculos, cuidados pessoais, aquisição e manutenção de habilidades funcionais para a vida. Além disso, busca atender às necessidades de apoio contínuo, estimulando os participantes de acordo com seus interesses e potencialidades, garantindo a aquisição de independência em habilidades básicas de maneira funcional. O projeto se baseia nos princípios da Constituição Federal de 1988 e na Lei Orgânica da Assistência Social, enfocando a Proteção Social Básica ao destinar serviços e proteções sociais para adultos com deficiência intelectual.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section  class="flex flex-col sm:flex-row gap-4 p-4 bg-zinc-100 shadow-custom">
+            <div class="text-4xl text-secondary text-center flex flex-col font-bold ">
+                <span>GOSTOU DO NOSSO PROJETO?</span>
+                <span>VENHA SE MATRICULAR!</span>
+            </div>
+            <div class="text-justify bg-primary p-4 text-white rounded-lg md:text-2xl lg:text-3xl">
+                A escola é uma organização da sociedade civil e atende a população por meio de contrato particular de prestação de serviço, podendo conceder descontos financeiros mediante levantamento socioassistencial. Possui ainda Termos de Colaboração com a Prefeitura Municipal de são Caetano do Sul e com a Secretaria de Educação do Estado de São Paulo. As matrículas são realizadas presencialmente mediante documentação apresentada. Poderão ser agendadas visitas à instituição para conhecimento do espaço, equipe, proposta e atividades.
+            </div>
+        </section>
+    </main>
+    <footer class="flex flex-col bg-secondary w-full px-12 py-4">
+        <div class="flex justify-between text-white flex-col lg:flex-row md:p-8 p-4 gap-4">
+            <div class="flex flex-col lg:w-1/3  items-center gap-2">
+                <b>Escola Metodista Semeador</b>
+                <div class="flex gap-4">
+                    <a href=" https://www.facebook.com/escolaosemeador/?locale=pt_BR">
+                        <img src="./img/logofacebook.webp" alt="Facebook" class="w-12 aspect-square">
+                    </a>
+                    <a href=" https://www.instagram.com/metodistaosemeador/">
+                        <img src="./img/logoinstagram.webp" alt="Instagram " class="w-12 aspect-square">
+                    </a>
+                   
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 lg:w-1/3 justify-center items-center text-white">
+                <div>
+                    <span class="font-bold">Contate nos</span>
+                </div>
+                <div class="flex md:flex-row flex-col items-center gap-2">
+                    <img src="./img/logotelefone.webp" alt="telefone" class="w-8 aspect-square">
+                    <span>(11) 4238-3100</span>
+                    <span>(11) 4238-9511</span>
+                </div>
+                <div class="flex gap-2">
+                    <img src="./img/logoemail - Copia.webp" alt="email" class="w-8 aspect-square">
+                    <a href="mailto:">osemeador@3remetodista.org.br</a>
+                </div>
+                <div class="flex gap-2">
+                    <img src="./img/logomapa.webp" alt="mapa" class="w-8 aspect-square">
+                    <span>São Caetano do Sul,Brasil</span>
+                </div>
+            </div>
+            <div class="lg:w-1/3 flex flex-col  items-center gap-2 text-white">
+                <div>
+                    <span class="font-bold text-white ">Parceiros</span>
+                </div>
+                <div class="flex justify-center gap-2 lg:flex-row flex-col ">
+                    <img src="./img/logoscs.png" alt="Prefeiturascs" class="w-12">
+                    <img src="img/logoIMT.png" alt="IMT" class="w-12">
+                    <img src="./img/logogoverno.png" alt="governo de sao paulo" class="w-12">
+                </div>
+                <span class="font-bold ">Farmácia de Manipulação Pró Pharmacos Rudge Ramos</span>
+                <span class="font-bold ">Grupo de Escoteiros João Ramalho</span>
+                <span class="font-bold ">Augusta e Respeitável Loja Simbólica ELIM</span>
+            </div>
+        </div>
+        <div class=" text-center">
+           <b class="text-white mt-10 px-4 w-full">
+               Copyright &copy;2023  Desenvolvido por <span class="designer">SoftwareSolutions
+            </b> 
+        </div>
+    </footer>
+    
+    <script>
+        function openMenu(){
+            document.getElementById("menu").style.display = "flex"
+        }
+        function closeMenu(){
+            document.getElementById("menu").style.display = "none"
+        }
+    </script>
+
+</body>
+
+</html>
